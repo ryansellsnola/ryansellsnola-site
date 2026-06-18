@@ -12,7 +12,6 @@
       --green:      #2B7A2B;
       --green-dark: #1A4A1A;
       --black:      #0D0D0D;
-      --gray:       #1E1E1E;
       --lgray:      #F5F5F5;
       --white:      #FFFFFF;
       --text:       #222222;
@@ -42,9 +41,14 @@
     }
     .hero-inner {
       position: relative;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
     }
+    .hero-text { grid-column: 1; }
     .hero-eyebrow {
       font-size: 11px;
       font-weight: 700;
@@ -54,36 +58,34 @@
       margin-bottom: 16px;
     }
     .hero h1 {
-      font-size: clamp(28px, 5vw, 46px);
+      font-size: clamp(26px, 4.5vw, 42px);
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.2;
       margin-bottom: 16px;
     }
     .hero h1 span { color: var(--green); }
     .hero-sub {
-      font-size: 17px;
+      font-size: 16px;
       color: #BBBBBB;
-      line-height: 1.6;
-      margin-bottom: 36px;
-      max-width: 560px;
+      line-height: 1.65;
+      margin-bottom: 28px;
     }
 
-    /* ── STATS BAR ── */
+    /* ── STATS ── */
     .stats {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
     }
     .stat { text-align: center; }
     .stat-num {
-      font-size: 32px;
+      font-size: 30px;
       font-weight: 800;
       color: var(--green);
       display: block;
     }
     .stat-label {
-      font-size: 12px;
+      font-size: 11px;
       color: #999;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -93,29 +95,21 @@
     .form-card {
       background: var(--white);
       border-radius: 10px;
-      padding: 36px 32px;
-      max-width: 480px;
+      padding: 32px 28px;
       color: var(--text);
       box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      grid-column: 2;
     }
-    .form-card h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .form-card p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
+    .form-card h2 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .form-card > p { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
     .form-card input {
       display: block;
       width: 100%;
-      padding: 13px 14px;
-      margin-bottom: 12px;
+      padding: 12px 13px;
+      margin-bottom: 10px;
       border: 1.5px solid #DDDDDD;
       border-radius: 6px;
-      font-size: 15px;
+      font-size: 14px;
       font-family: inherit;
       outline: none;
       transition: border 0.2s;
@@ -123,7 +117,7 @@
     .form-card input:focus { border-color: var(--green); }
     .form-card button {
       width: 100%;
-      padding: 14px;
+      padding: 13px;
       background: var(--green);
       color: var(--white);
       font-size: 15px;
@@ -135,30 +129,32 @@
     }
     .form-card button:hover { background: var(--green-dark); }
     .form-card button:disabled { opacity: 0.6; cursor: not-allowed; }
-    .form-note {
-      font-size: 11px;
-      color: #999;
-      text-align: center;
-      margin-top: 12px;
-    }
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 12px 0 4px;
-    }
+    .form-note { font-size: 11px; color: #999; text-align: center; margin-top: 10px; }
+    .err-msg { color: #cc3300; font-size: 13px; margin-top: 8px; display: none; }
+    .form-success { display: none; text-align: center; padding: 8px 0; }
     .form-success h3 { font-size: 18px; color: var(--green); margin-bottom: 8px; }
-    .form-success p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
-    .form-success a {
+    .form-success p  { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+    .form-success a  {
       display: inline-block;
-      padding: 13px 28px;
+      padding: 13px 24px;
       background: var(--green);
       color: var(--white);
       text-decoration: none;
       border-radius: 6px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
     }
-    .err-msg { color: #cc3300; font-size: 13px; margin-top: 8px; display: none; }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof {
+      background: var(--green);
+      color: var(--white);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
 
     /* ── ABOUT ── */
     .about {
@@ -166,19 +162,20 @@
       padding: 64px 24px;
     }
     .about-inner {
-      max-width: 800px;
+      max-width: 760px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 40px;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
       align-items: center;
     }
     .about-photo img {
-      width: 100%;
-      border-radius: 8px;
+      width: 120px;
+      border-radius: 6px;
+      display: block;
     }
-    .about-text h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
-    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .about-text h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .about-text p  { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
     .about-text strong { color: var(--text); }
 
     /* ── TESTIMONIALS ── */
@@ -220,11 +217,12 @@
     footer a { color: var(--green); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .form-card  { grid-column: 1; }
       .stats { gap: 20px; }
       .about-inner { grid-template-columns: 1fr; text-align: center; }
-      .about-photo { max-width: 140px; margin: 0 auto; }
-      .form-card { padding: 28px 20px; }
+      .about-photo { max-width: 110px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -233,17 +231,18 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">New Orleans Listing Agent</p>
-    <h1>Sell your home for <span>more money</span>, in less time.</h1>
-    <p class="hero-sub">
-      91% of my listings sell. My clients average 98% of asking price in 31 days.
-      Before you list — get the free checklist that shows you exactly what to do.
-    </p>
-
-    <div class="stats">
-      <div class="stat"><span class="stat-num">91%</span><span class="stat-label">Listings Sold</span></div>
-      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Of Asking Price</span></div>
-      <div class="stat"><span class="stat-num">31</span><span class="stat-label">Avg Days on Market</span></div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">New Orleans Metro Listing Agent</p>
+      <h1>Sell your home for <span>more money</span>, in less time.</h1>
+      <p class="hero-sub">
+        91% of my listings sell. My clients average 98% of asking price in 31 days.
+        Before you list — get the free checklist that shows you exactly what to do.
+      </p>
+      <div class="stats">
+        <div class="stat"><span class="stat-num">91%</span><span class="stat-label">Listings Sold</span></div>
+        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Of Asking Price</span></div>
+        <div class="stat"><span class="stat-num">31</span><span class="stat-label">Avg Days on Market</span></div>
+      </div>
     </div>
 
     <div class="form-card">
@@ -251,9 +250,9 @@
       <p>Everything you need to do before your home hits the market — delivered instantly.</p>
 
       <form id="sell-form">
-        <input type="text"  id="s-name"  placeholder="Your name"         required autocomplete="name" />
-        <input type="tel"   id="s-phone" placeholder="Phone number"       required autocomplete="tel" />
-        <input type="email" id="s-email" placeholder="Email address"      required autocomplete="email" />
+        <input type="text"  id="s-name"  placeholder="Your name"    required autocomplete="name" />
+        <input type="tel"   id="s-phone" placeholder="Phone number" required autocomplete="tel" />
+        <input type="email" id="s-email" placeholder="Email address" required autocomplete="email" />
         <button type="submit" id="s-btn">Send Me the Checklist</button>
         <p class="err-msg" id="s-err"></p>
         <p class="form-note">No spam. Your info goes directly to Ryan — no third parties.</p>
@@ -268,25 +267,30 @@
   </div>
 </section>
 
+<!-- SOCIAL PROOF BAR -->
+<div class="proof">
+  91% of my listings sell &nbsp;·&nbsp; 98% of asking price &nbsp;·&nbsp; 31 days average &nbsp;·&nbsp; New Orleans metro area
+</div>
+
 <!-- ABOUT -->
 <section class="about">
   <div class="about-inner">
     <div class="about-photo">
-      <img src="/assets/ryan-headshot.jpg" alt="Ryan Curtis Rogers, REALTOR®" onerror="this.style.display='none'" />
+      <img src="/assets/ryan-headshot.png" alt="Ryan Curtis Rogers, REALTOR®" onerror="this.style.display='none'" />
     </div>
     <div class="about-text">
       <h2>Ryan Curtis Rogers, REALTOR®</h2>
       <p>
-        I'm a New Orleans listing agent who specializes in helping sellers prepare, price, and
-        close for the most money the market will bear. I work in Lakeview, Gentilly, Mid-City,
-        the Irish Channel, and neighborhoods across Orleans and Jefferson Parish.
+        I'm a listing agent serving the New Orleans metro area — Orleans Parish, Jefferson Parish
+        Eastbank and Westbank, and the Northshore. I specialize in helping sellers prepare, price,
+        and close for the most money the market will bear.
       </p>
       <p>
         <strong>I don't filter information.</strong> You'll know exactly what your home is worth,
-        what buyers are doing in your neighborhood, and what we need to do to get you the best outcome.
+        what buyers are doing in your market, and what we need to do to get you the best outcome.
       </p>
       <p>
-        <strong>(504) 708-2257  &nbsp;|&nbsp; ryan@ryansellsnola.com</strong>
+        <strong>(504) 708-2257 &nbsp;|&nbsp; ryan@ryansellsnola.com</strong>
       </p>
     </div>
   </div>
@@ -341,7 +345,6 @@
     try {
       const res  = await fetch('/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await res.json();
-
       if (data.ok) {
         form.style.display = 'none';
         success.style.display = 'block';
