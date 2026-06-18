@@ -36,8 +36,8 @@ export async function onRequestPost(context) {
     type: 'Registration',
     person: {
       name,
-      email,
-      phone,
+      emails: [{ value: email }],
+      phones: [{ value: phone }],
       tags: tag,
     },
   };
