@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Sale By Owner Marketing Toolkit | Ryan Curtis Rogers</title>
+  <meta name="description" content="Get the free FSBO Marketing Toolkit — 10 steps, buyer facts, and the real numbers on selling your home yourself in New Orleans." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2B7A2B;
+      --green-dark: #1A4A1A;
+      --black:      #0D0D0D;
+      --lgray:      #F5F5F5;
+      --white:      #FFFFFF;
+      --text:       #222222;
+      --muted:      #666666;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 72px 24px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/assets/hero-bg.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hero-text { grid-column: 1; }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 4.5vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero-sub {
+      font-size: 16px;
+      color: #BBBBBB;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    /* what's inside list */
+    .inside-list {
+      list-style: none;
+      margin-bottom: 0;
+    }
+    .inside-list li {
+      font-size: 14px;
+      color: #CCCCCC;
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .inside-list li::before {
+      content: '✓';
+      color: var(--green);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 32px 28px;
+      color: var(--text);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      grid-column: 2;
+    }
+    .form-card h2 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .form-card p  { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
+    .form-card input {
+      display: block;
+      width: 100%;
+      padding: 12px 13px;
+      margin-bottom: 10px;
+      border: 1.5px solid #DDDDDD;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form-card input:focus { border-color: var(--green); }
+    .form-card button {
+      width: 100%;
+      padding: 13px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-card button:hover { background: var(--green-dark); }
+    .form-card button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-note { font-size: 11px; color: #999; text-align: center; margin-top: 10px; }
+    .err-msg { color: #cc3300; font-size: 13px; margin-top: 8px; display: none; }
+    .form-success { display: none; text-align: center; padding: 8px 0; }
+    .form-success h3 { font-size: 18px; color: var(--green); margin-bottom: 8px; }
+    .form-success p  { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+    .form-success a  {
+      display: inline-block;
+      padding: 13px 24px;
+      background: var(--green);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof {
+      background: var(--green);
+      color: var(--white);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── WHY SECTION ── */
+    .why {
+      padding: 64px 24px;
+      background: var(--lgray);
+    }
+    .why-inner { max-width: 760px; margin: 0 auto; }
+    .why h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .why-lead { font-size: 16px; color: var(--muted); margin-bottom: 36px; line-height: 1.6; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 22px 20px;
+      border-top: 3px solid var(--green);
+    }
+    .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .why-card p  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 64px 24px;
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .about-photo img { width: 100%; border-radius: 8px; }
+    .about-text h2   { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .about-text p    { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
+    .about-text strong { color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: #888;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .form-card  { grid-column: 1; }
+      .about-inner { grid-template-columns: 1fr; text-align: center; }
+      .about-photo { max-width: 130px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">For Sale By Owner</p>
+      <h1>Thinking about selling <span>on your own?</span></h1>
+      <p class="hero-sub">
+        Get the free FSBO Marketing Toolkit — the real numbers, the risks most sellers
+        don't find out about until it's too late, and a step-by-step guide to doing it right.
+      </p>
+      <ul class="inside-list">
+        <li>10 steps to sell your home yourself</li>
+        <li>5 buyer types and what they're really after</li>
+        <li>The lawsuit risk most FSBO sellers ignore</li>
+        <li>Net gain analysis — agent vs. no agent</li>
+        <li>What to watch out for at every stage</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h2>Get the Free Toolkit</h2>
+      <p>Enter your info and download it instantly. No obligation, no sales pitch.</p>
+
+      <form id="fsbo-form">
+        <input type="text"  id="f-name"  placeholder="Your name"    required autocomplete="name" />
+        <input type="tel"   id="f-phone" placeholder="Phone number" required autocomplete="tel" />
+        <input type="email" id="f-email" placeholder="Email address" required autocomplete="email" />
+        <button type="submit" id="f-btn">Send Me the Toolkit</button>
+        <p class="err-msg" id="f-err"></p>
+        <p class="form-note">Your info goes directly to Ryan. No third parties, no spam.</p>
+      </form>
+
+      <div class="form-success" id="f-success">
+        <h3>It's on its way!</h3>
+        <p>Click below to download the FSBO Marketing Toolkit now.</p>
+        <a id="f-download" href="#" download>Download the Toolkit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  91% of my listings sell &nbsp;·&nbsp; 98% of asking price &nbsp;·&nbsp; 31 days average &nbsp;·&nbsp; New Orleans area
+</div>
+
+<!-- WHY READ IT -->
+<section class="why">
+  <div class="why-inner">
+    <h2>What most FSBO sellers find out too late</h2>
+    <p class="why-lead">
+      Selling on your own is legal — and sometimes it works. But most sellers go in without understanding
+      what buyers and their agents are actually doing. This toolkit gives you the full picture.
+    </p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Bargain hunters target FSBOs</h3>
+        <p>Buyers know you're trying to save the commission. Many approach private sellers expecting a discount equal to exactly what you saved.</p>
+      </div>
+      <div class="why-card">
+        <h3>Legal exposure is real</h3>
+        <p>Disclosure requirements in Louisiana are strict. Missing one can open you up to lawsuits long after closing.</p>
+      </div>
+      <div class="why-card">
+        <h3>The net gain math surprises people</h3>
+        <p>After concessions, carrying costs, and the time on market, many FSBO sellers net less than they would have with an agent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="/assets/ryan-headshot.jpg" alt="Ryan Curtis Rogers, REALTOR®" onerror="this.style.display='none'" />
+    </div>
+    <div class="about-text">
+      <h2>Ryan Curtis Rogers, REALTOR®</h2>
+      <p>
+        I put this toolkit together because I believe sellers deserve the full picture —
+        not a sales pitch. If you read it and decide to sell on your own, I hope it helps you.
+        If you decide you want help, I'm here.
+      </p>
+      <p>
+        <strong>(504) 708-2257 &nbsp;|&nbsp; ryan@ryansellsnola.com</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Ryan Curtis Rogers &nbsp;|&nbsp; REALTOR® &nbsp;|&nbsp; Snap Realty</p>
+  <p><a href="tel:5047082257">(504) 708-2257</a> &nbsp;|&nbsp; <a href="mailto:ryan@ryansellsnola.com">ryan@ryansellsnola.com</a></p>
+  <p style="margin-top:8px;">© 2025 Ryan Curtis Rogers. Licensed in Louisiana. Snap Realty is an Equal Housing Opportunity brokerage.</p>
+</footer>
+
+<script>
+  const form    = document.getElementById('fsbo-form');
+  const btn     = document.getElementById('f-btn');
+  const errMsg  = document.getElementById('f-err');
+  const success = document.getElementById('f-success');
+  const dlLink  = document.getElementById('f-download');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    errMsg.style.display = 'none';
+
+    const payload = {
+      name:  document.getElementById('f-name').value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      email: document.getElementById('f-email').value.trim(),
+      type:  'fsbo',
+    };
+
+    try {
+      const res  = await fetch('/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const data = await res.json();
+      if (data.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        dlLink.href = data.downloadUrl;
+      } else {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      errMsg.textContent = err.message;
+      errMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Me the Toolkit';
+    }
+  });
+</script>
+
+</body>
+</html>
