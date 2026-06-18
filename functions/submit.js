@@ -34,14 +34,12 @@ export async function onRequestPost(context) {
   const fubPayload = {
     source,
     type: 'Registration',
-    people: [
-      {
-        name,
-        phones: [{ value: phone, type: 'mobile' }],
-        emails: [{ value: email, type: 'work' }],
-        tags: [tag],
-      },
-    ],
+    person: {
+      name,
+      email,
+      phone,
+      tags: tag,
+    },
   };
 
   const fubRes = await fetch('https://api.followupboss.com/v1/events', {
