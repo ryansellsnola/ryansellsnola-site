@@ -19,28 +19,38 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'Invalid request.' }, 400);
   }
 
-  const { name, phone, email, type } = body;
+  const { name, phone, email, type, property } = body;
 
-  if (!name || !phone || !email) {
+  if (!name || !phone) {
+    return json({ ok: false, error: 'Name and phone are required.' }, 400);
+  }
+  if (type !== 'showing' && !email) {
     return json({ ok: false, error: 'Name, phone, and email are required.' }, 400);
   }
 
-  const source = type === 'fsbo'
-    ? 'FSBO Lead Magnet — ryansellsnola.com/fsbo'
-    : 'Seller Checklist — ryansellsnola.com';
+  let source, tag;
+  if (type === 'fsbo') {
+    source = 'FSBO Lead Magnet — ryansellsnola.com/fsbo';
+    tag = 'FSBO';
+  } else if (type === 'showing') {
+    source = 'Showing Request — ryansellsnola.com';
+    tag = 'Showing Request';
+  } else {
+    source = 'Seller Checklist — ryansellsnola.com';
+    tag = 'Seller Lead';
+  }
 
-  const tag = type === 'fsbo' ? 'FSBO' : 'Seller Lead';
-
-  const fubPayload = {
-    source,
-    type: 'Registration',
-    person: {
-      name,
-      emails: [{ value: email }],
-      phones: [{ value: phone }],
-      tags: tag,
-    },
+  const person = {
+    name,
+    phones: [{ value: phone }],
+    tags: tag,
   };
+  if (email) person.emails = [{ value: email }];
+
+  const fubPayload = { source, type: 'Registration', person };
+  if (type === 'showing' && property) {
+    fubPayload.property = { street: property };
+  }
 
   const fubRes = await fetch('https://api.followupboss.com/v1/events', {
     method: 'POST',
@@ -57,9 +67,9 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'Could not save your info. Please try again.' }, 502);
   }
 
-  const downloadUrl = type === 'fsbo'
-    ? '/assets/fsbo-toolkit.pdf'
-    : '/assets/seller-checklist.pdf';
+  let downloadUrl = null;
+  if (type === 'fsbo') downloadUrl = '/assets/fsbo-toolkit.pdf';
+  else if (type !== 'showing') downloadUrl = '/assets/seller-checklist.pdf';
 
   return json({ ok: true, downloadUrl });
 }
