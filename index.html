@@ -48,6 +48,7 @@
       gap: 48px;
       align-items: start;
     }
+    .hero-inner > * { min-width: 0; }
     .hero-text { grid-column: 1; }
     .hero-eyebrow {
       font-size: 11px;
@@ -216,6 +217,10 @@
     }
     footer a { color: var(--green); text-decoration: none; }
 
+    /* ── BOTTOM LOGO ── */
+    .bottom-logo { text-align: center; padding: 40px 24px; background: var(--white); }
+    .bottom-logo img { height: 68px; display: inline-block; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -314,6 +319,10 @@
     </div>
   </div>
 </section>
+
+<div class="bottom-logo">
+  <img src="/assets/snap-logo-green.png" alt="Snap Realty" />
+</div>
 
 <!-- FOOTER -->
 <footer>
