@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3008XE65Z0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3008XE65Z0');
+  </script>
+  <title>3922 Cleveland Ave, Unit A | Mid-City Condo for Sale | Ryan Sells NOLA</title>
+  <meta name="description" content="Updated 2-bedroom Mid-City condo for sale at $250,000, one block from the Canal Street streetcar line. Historic 1938 building with modern systems. Schedule a showing." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2B7A2B;
+      --green-dark: #1A4A1A;
+      --black:      #0D0D0D;
+      --lgray:      #F5F5F5;
+      --white:      #FFFFFF;
+      --text:       #222222;
+      --muted:      #666666;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 56px 24px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('photos/photo-1.jpg') center/cover no-repeat;
+      opacity: 0.32;
+    }
+    .bottom-logo { text-align: center; padding: 40px 24px; background: var(--lgray); }
+    .bottom-logo img { height: 68px; display: inline-block; }
+    .hero-inner {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hero-inner > * { min-width: 0; }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 3.6vw, 34px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .hero .addr2 { font-size: 15px; color: #CCCCCC; margin-bottom: 18px; }
+    .hero .price { font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: var(--green); margin-bottom: 18px; }
+    .hero-hook { font-size: 16px; color: #DDDDDD; line-height: 1.6; margin-bottom: 28px; max-width: 480px; }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 14px; max-width: 480px; }
+    .stat { text-align: center; background: rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 6px; }
+    .stat-num { font-size: 20px; font-weight: 800; color: var(--white); display: block; }
+    .stat-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px 26px;
+      color: var(--text);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+    .form-card h2 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .form-card > p { font-size: 13px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+    .form-card input {
+      display: block; width: 100%; padding: 12px 13px; margin-bottom: 10px;
+      border: 1.5px solid #DDDDDD; border-radius: 6px; font-size: 14px; font-family: inherit;
+      outline: none; transition: border 0.2s;
+    }
+    .form-card input:focus { border-color: var(--green); }
+    .form-card button {
+      width: 100%; padding: 13px; background: var(--green); color: var(--white);
+      font-size: 15px; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-card button:hover { background: var(--green-dark); }
+    .form-card button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-note { font-size: 11px; color: #999; text-align: center; margin-top: 10px; }
+    .err-msg { color: #cc3300; font-size: 13px; margin-top: 8px; display: none; }
+    .form-success { display: none; text-align: center; padding: 8px 0; }
+    .form-success h3 { font-size: 18px; color: var(--green); margin-bottom: 8px; }
+    .form-success p { font-size: 13px; color: var(--muted); }
+
+    .gallery { padding: 56px 24px; background: var(--white); }
+    .gallery-grid {
+      max-width: 1100px; margin: 0 auto; display: grid;
+      grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .description { padding: 56px 24px; background: var(--lgray); }
+    .description-inner { max-width: 700px; margin: 0 auto; }
+    .description h2 { font-size: 24px; font-weight: 800; margin-bottom: 18px; }
+    .description p { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 14px; }
+    .highlights { max-width: 700px; margin: 28px auto 0; list-style: none; }
+    .highlights li {
+      font-size: 14px; color: var(--text); padding: 7px 0 7px 22px; position: relative;
+    }
+    .highlights li::before { content: '✓'; color: var(--green); position: absolute; left: 0; font-weight: 700; }
+
+    .financing { padding: 48px 24px; background: var(--white); text-align: center; }
+    .financing h2 { font-size: 18px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+    .financing-num { font-size: 42px; font-weight: 800; color: var(--green); }
+    .financing-num span { font-size: 18px; color: var(--muted); font-weight: 600; }
+    .financing-note { font-size: 12px; color: #999; margin-top: 10px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    .about { padding: 56px 24px; background: var(--lgray); }
+    .about-inner {
+      max-width: 700px; margin: 0 auto; display: grid;
+      grid-template-columns: 160px 1fr; gap: 32px; align-items: center;
+    }
+    .about-photo img { width: 100%; border-radius: 6px; display: block; }
+    .about-text h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .about-text p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+
+    footer {
+      background: var(--black); color: #888; text-align: center;
+      padding: 28px 24px; font-size: 12px; line-height: 1.8;
+    }
+    footer a { color: var(--green); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .hero { padding-left: 16px; padding-right: 16px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); max-width: 100%; gap: 10px; }
+      .stat { padding: 10px 4px; }
+      .stat-num { font-size: 17px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-inner { grid-template-columns: 1fr; text-align: center; }
+      .about-photo { max-width: 120px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">New Orleans Listing</p>
+      <h1>3922 Cleveland Ave, Unit A</h1>
+      <p class="addr2">New Orleans, LA 70119</p>
+      <p class="price">$250,000</p>
+      <p class="hero-hook">A beautifully updated 2-bedroom condo in the heart of vibrant Mid-City, just one block from the Canal Street streetcar line.</p>
+      <div class="stats"><div class="stat"><span class="stat-num">2</span><span class="stat-label">Bedrooms</span></div><div class="stat"><span class="stat-num">1</span><span class="stat-label">Bath</span></div><div class="stat"><span class="stat-num">900</span><span class="stat-label">Sq Ft</span></div><div class="stat"><span class="stat-num">1938</span><span class="stat-label">Year Built</span></div></div>
+    </div>
+
+    <div class="form-card">
+      <h2>Schedule a Showing</h2>
+      <p>Tell us when works and Ryan will confirm a time.</p>
+
+      <form id="showing-form">
+        <input type="text"  id="sh-name"  placeholder="Your name"     required autocomplete="name" />
+        <input type="tel"   id="sh-phone" placeholder="Phone number"  required autocomplete="tel" />
+        <button type="submit" id="sh-btn">Request a Showing</button>
+        <p class="err-msg" id="sh-err"></p>
+        <p class="form-note">Your info goes directly to Ryan. No spam, no third parties.</p>
+      </form>
+
+      <div class="form-success" id="sh-success">
+        <h3>Got it!</h3>
+        <p>Ryan will reach out shortly to confirm your showing time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-grid"><div class="gallery-item"><img src="photos/photo-1.jpg" alt="Property photo 1" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-2.jpg" alt="Property photo 2" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-3.jpg" alt="Property photo 3" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-4.jpg" alt="Property photo 4" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-5.jpg" alt="Property photo 5" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-6.jpg" alt="Property photo 6" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-7.jpg" alt="Property photo 7" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-8.jpg" alt="Property photo 8" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-9.jpg" alt="Property photo 9" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-10.jpg" alt="Property photo 10" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-11.jpg" alt="Property photo 11" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-12.jpg" alt="Property photo 12" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-13.jpg" alt="Property photo 13" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-14.jpg" alt="Property photo 14" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-15.jpg" alt="Property photo 15" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-16.jpg" alt="Property photo 16" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-17.jpg" alt="Property photo 17" loading="lazy"></div><div class="gallery-item"><img src="photos/photo-18.jpg" alt="Property photo 18" loading="lazy"></div></div>
+</section>
+
+<section class="description">
+  <div class="description-inner">
+    <h2>About This Home</h2>
+    <p>Welcome to this beautifully updated 2-bedroom condo in the heart of vibrant Mid-City, just one block from the Canal Street streetcar line. Set on the upper floor of a historic 1938 building, this home pairs original character with the peace of mind of modern systems, including major mechanicals replaced during a thoughtful remodel.</p><p>Warm wood floors run through the living room and kitchen, where granite countertops and stainless steel appliances anchor the space, including a dishwasher, microwave, and range. A full-size washer and dryer are included in the unit.</p><p>Step outside to a shared courtyard and back porch, a quiet retreat in the middle of one of the city's most sought-after neighborhoods. You are just blocks from Bayou St. John, with City Park and the restaurants, cafes, and coffee shops that make Mid-City what it is all close by. The streetcar is right there for an easy ride downtown, and the property sits near the Endymion parade route.</p><p>Historic character, updated where it counts, in a location that is genuinely hard to beat. Schedule your showing today and come see it for yourself.</p>
+    <ul class="highlights">
+      <li>Upper-floor unit in a historic 1938 building</li><li>Major mechanicals replaced during a thoughtful remodel</li><li>Warm wood floors through the living room and kitchen</li><li>Granite countertops and stainless steel appliances</li><li>Full-size washer and dryer included in the unit</li><li>Shared courtyard and back porch</li><li>One block from the Canal Street streetcar line</li><li>Just blocks from Bayou St. John and City Park</li><li>Near the Endymion parade route</li><li>Also available for lease at $1,800/month</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="/assets/ryan-headshot.png" alt="Ryan Curtis Rogers, REALTOR®" onerror="this.style.display='none'" />
+    </div>
+    <div class="about-text">
+      <h2>Ryan Curtis Rogers, REALTOR®</h2>
+      <p>I'm a New Orleans listing agent who specializes in helping sellers prepare, price, and close for the most money the market will bear. I work in Lakeview, Gentilly, Mid-City, the Irish Channel, and neighborhoods across Orleans and Jefferson Parish. I don't filter information, you'll know exactly what a property is worth and what it takes to get the best outcome.</p>
+      <p><strong>(504) 708-2257 &nbsp;|&nbsp; ryan@ryansellsnola.com</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="bottom-logo">
+  <img src="/assets/snap-logo-green.png" alt="Snap Realty" />
+</div>
+
+<footer>
+  <p>Ryan Curtis Rogers, REALTOR® &nbsp;|&nbsp; <a href="tel:5047082257">(504) 708-2257</a> &nbsp;|&nbsp; <a href="mailto:ryan@ryansellsnola.com">ryan@ryansellsnola.com</a></p>
+  <p style="margin-top:6px;">Snap Realty, LLC &nbsp;|&nbsp; (504) 301-3826 &nbsp;|&nbsp; New Orleans, Louisiana &nbsp;|&nbsp; Licensed in Louisiana</p>
+  <p style="margin-top:8px;">&copy; 2026 Ryan Curtis Rogers. Snap Realty is an Equal Housing Opportunity brokerage.</p>
+</footer>
+
+<script>
+  const form    = document.getElementById('showing-form');
+  const btn     = document.getElementById('sh-btn');
+  const errMsg  = document.getElementById('sh-err');
+  const success = document.getElementById('sh-success');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    errMsg.style.display = 'none';
+
+    const payload = {
+      name:  document.getElementById('sh-name').value.trim(),
+      phone: document.getElementById('sh-phone').value.trim(),
+      type:  'showing',
+      property: '3922 Cleveland Ave, Unit A',
+    };
+
+    try {
+      const res  = await fetch('/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const data = await res.json();
+      if (data.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      errMsg.textContent = err.message;
+      errMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Request a Showing';
+    }
+  });
+</script>
+
+</body>
+</html>
