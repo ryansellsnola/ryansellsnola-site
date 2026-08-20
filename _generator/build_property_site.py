@@ -31,10 +31,9 @@ AGENT_EMAIL = "ryan@ryansellsnola.com"
 BROKERAGE_LINE = "Snap Realty, LLC &nbsp;|&nbsp; (504) 301-3826 &nbsp;|&nbsp; New Orleans, Louisiana &nbsp;|&nbsp; Licensed in Louisiana"
 AGENT_BIO = (
     "I'm a New Orleans listing agent who specializes in helping sellers prepare, price, and "
-    "close for the most money the market will bear. I work in Lakeview, Gentilly, Mid-City, "
-    "the Irish Channel, and neighborhoods across Orleans and Jefferson Parish. I don't filter "
-    "information, you'll know exactly what a property is worth and what it takes to get the "
-    "best outcome."
+    "close for the most money the market will bear. I work throughout the greater New Orleans "
+    "metro area. I don't filter information, you'll know exactly what a property is worth and "
+    "what it takes to get the best outcome."
 )
 
 
@@ -104,6 +103,7 @@ def build_site(cfg: dict):
 
     html = HTML_TEMPLATE.format(
         title=cfg["title"],
+        eyebrow=cfg.get("eyebrow", "New Orleans Listing"),
         meta_description=cfg["meta_description"],
         address_line1=cfg["address_line1"],
         address_line2=cfg["address_line2"],
@@ -296,7 +296,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow">New Orleans Listing</p>
+      <p class="hero-eyebrow">{eyebrow}</p>
       <h1>{address_line1}</h1>
       <p class="addr2">{address_line2}</p>
       <p class="price">${price}</p>
@@ -306,7 +306,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <div class="form-card">
       <h2>Schedule a Showing</h2>
-      <p>Tell us when works and Ryan will confirm a time.</p>
 
       <form id="showing-form">
         <input type="text"  id="sh-name"  placeholder="Your name"     required autocomplete="name" />
