@@ -27,7 +27,7 @@
     "220 outlet in the backyard, wired for a camper or RV",
     "Two car attached garage",
     "Large corner lot with mature trees",
-    "Flood Zone X, no flood insurance required"
+    "Flood Zone X"
   ],
   "photos_source_dir": "/Users/ryanrogers/Dropbox/02 RyanSellsNola/02 Listings/733 Guardian Ave/Photos",
   "photo_order": [
@@ -54,15 +54,13 @@
   "eyebrow": "Terrytown Listing",
   "financing": {
     "price": 245000,
-    "down_pct": 3.5,
-    "rate_pct": 6.3,
+    "down_pct": 20,
+    "rate_pct": 6.72,
     "term_years": 30,
-    "annual_property_tax": 2900.8,
+    "annual_property_tax": 2012.8,
     "monthly_insurance": 460.83,
     "monthly_hoa": 0,
-    "monthly_flood": 0,
-    "upfront_mip_pct": 1.75,
-    "annual_mip_pct": 0.55
+    "monthly_flood": 0
   },
-  "financing_note": "Based on a 6.30% FHA rate with 3.5% down, financed upfront mortgage insurance, and no homestead exemption. Includes estimated taxes, insurance, and monthly mortgage insurance. Actual payment varies by lender and rate lock."
+  "financing_note": "Based on a 6.72% rate, 20% down conventional loan, and the Louisiana homestead exemption. Includes estimated taxes and insurance. Actual payment varies by lender and rate lock."
 }
