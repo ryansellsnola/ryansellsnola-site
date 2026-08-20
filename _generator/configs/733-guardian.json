@@ -51,5 +51,18 @@
     "18 drone shot.jpg"
   ],
   "hero_photo_index": 0,
-  "eyebrow": "Terrytown Listing"
+  "eyebrow": "Terrytown Listing",
+  "financing": {
+    "price": 245000,
+    "down_pct": 3.5,
+    "rate_pct": 6.3,
+    "term_years": 30,
+    "annual_property_tax": 2900.8,
+    "monthly_insurance": 460.83,
+    "monthly_hoa": 0,
+    "monthly_flood": 0,
+    "upfront_mip_pct": 1.75,
+    "annual_mip_pct": 0.55
+  },
+  "financing_note": "Based on a 6.30% FHA rate with 3.5% down, financed upfront mortgage insurance, and no homestead exemption. Includes estimated taxes, insurance, and monthly mortgage insurance. Actual payment varies by lender and rate lock."
 }

@@ -38,15 +38,20 @@ AGENT_BIO = (
 
 
 def compute_monthly_payment(price, down_pct, rate_pct, term_years,
-                             annual_property_tax, monthly_insurance, monthly_hoa, monthly_flood=0):
+                             annual_property_tax, monthly_insurance, monthly_hoa, monthly_flood=0,
+                             upfront_mip_pct=0, annual_mip_pct=0):
     """Mirrors compute_financing() in the OM generator -- same formula, trimmed to just
     the monthly payment since the website shows a simple estimate, not a full closing-cost
     breakdown."""
-    loan = price * (1 - down_pct / 100)
+    base_loan = price * (1 - down_pct / 100)
+    # FHA finances the upfront MIP into the loan balance; conventional passes 0 and is unaffected.
+    loan = base_loan * (1 + upfront_mip_pct / 100)
     r = (rate_pct / 100) / 12
     n = term_years * 12
     pi = loan * (r * (1 + r) ** n) / ((1 + r) ** n - 1)
-    return pi + (annual_property_tax / 12) + monthly_insurance + monthly_hoa + monthly_flood
+    monthly_mip = base_loan * (annual_mip_pct / 100) / 12
+    return (pi + (annual_property_tax / 12) + monthly_insurance
+            + monthly_hoa + monthly_flood + monthly_mip)
 
 
 def resize_for_web(src_dir: str, dest_dir: str, filenames: list, max_dim=1920, quality=82) -> list:
