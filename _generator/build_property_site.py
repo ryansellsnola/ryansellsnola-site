@@ -113,6 +113,7 @@ def build_site(cfg: dict):
         address_line1=cfg["address_line1"],
         address_line2=cfg["address_line2"],
         price=f'{cfg["list_price"]:,.0f}',
+        price_suffix=cfg.get("price_suffix", ""),
         hero_photo=hero_photo,
         hook=cfg["hook"],
         stats_html=stats_html,
@@ -154,6 +155,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     :root {{
       --green:      #2B7A2B;
+      --green-on-dark: #6EC671;  /* accessible green for text over the dimmed hero photo */
       --green-dark: #1A4A1A;
       --black:      #0D0D0D;
       --lgray:      #F5F5F5;
@@ -198,7 +200,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: var(--green);
+      color: var(--green-on-dark);
       text-transform: uppercase;
       margin-bottom: 14px;
     }}
@@ -209,7 +211,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       margin-bottom: 6px;
     }}
     .hero .addr2 {{ font-size: 15px; color: #CCCCCC; margin-bottom: 18px; }}
-    .hero .price {{ font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: var(--green); margin-bottom: 18px; }}
+    .hero .price {{ font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: var(--green-on-dark); margin-bottom: 18px; }}
+    .hero .price .price-suffix {{ font-size: 0.45em; font-weight: 600; color: #BBBBBB; letter-spacing: 0.02em; }}
     .hero-hook {{ font-size: 16px; color: #DDDDDD; line-height: 1.6; margin-bottom: 28px; max-width: 480px; }}
 
     .stats {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 14px; max-width: 480px; }}
@@ -304,7 +307,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       <p class="hero-eyebrow">{eyebrow}</p>
       <h1>{address_line1}</h1>
       <p class="addr2">{address_line2}</p>
-      <p class="price">${price}</p>
+      <p class="price">${price}<span class="price-suffix">{price_suffix}</span></p>
       <p class="hero-hook">{hook}</p>
       <div class="stats">{stats_html}</div>
     </div>
